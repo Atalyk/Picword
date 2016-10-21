@@ -8,12 +8,42 @@
 
 import UIKit
 import Messages
+import Foundation
 
-class MessagesViewController: MSMessagesAppViewController {
+class MessagesViewController: MSMessagesAppViewController, AddMessageViewControllerDelegate {
+    
+    var image = UIImage()
+    var caption = ""
+    var sendButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    }
+    
+    func addMessageViewControllerDidSubmit(image: UIImage, caption: String) {
+        let layout = MSMessageTemplateLayout()
+        layout.image = image
+        layout.caption = caption
+        
+        self.image = image
+        self.caption = caption
+
+        let components = NSURLComponents()
+        let queryItem = URLQueryItem(name: "Message", value: caption)
+        
+
+        components.queryItems = [queryItem]
+        
+        let conversation = self.activeConversation
+        let session = MSSession()
+        let message = MSMessage(session: session)
+        message.layout = layout
+        message.url = components.url!
+        
+        conversation?.insert(message, completionHandler: { (error: Error?) in
+            
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -21,13 +51,65 @@ class MessagesViewController: MSMessagesAppViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    private func presentViewController(for conversation: MSConversation, with presentationStyle: MSMessagesAppPresentationStyle) {
+        
+        var controller: UIViewController!
+        
+        if presentationStyle == .compact {
+            controller = instantiateAddMessageViewController()
+        } else {
+            
+            guard let message = conversation.selectedMessage else {
+                fatalError("Error occured")
+            }
+            
+            let components = URLComponents(string: (message.url?.absoluteString)!)
+
+            let queryItem = components?.queryItems?[0]
+            
+            controller = instantiateDetailViewController(message: (queryItem?.value)!)
+        }
+        
+        addChildViewController(controller)
+        
+        controller.view.frame = view.bounds
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(controller.view)
+        
+        controller.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        controller.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        controller.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        controller.didMove(toParentViewController: self)
+    }
+    
+    private func instantiateAddMessageViewController()->UIViewController {
+        
+        guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddMessageViewController") as? AddMessageViewController else {
+            fatalError("Error")
+        }
+        
+        controller.delegate = self
+        return controller
+    }
+    
+    private func instantiateDetailViewController(message: String)->UIViewController {
+        
+        guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+            fatalError("Error")
+        }
+    
+        controller.word = message
+        
+        
+        return controller
+    }
+    
     // MARK: - Conversation Handling
     
     override func willBecomeActive(with conversation: MSConversation) {
-        // Called when the extension is about to move from the inactive to active state.
-        // This will happen when the extension is about to present UI.
-        
-        // Use this method to configure the extension and restore previously stored state.
+        presentViewController(for: conversation, with: presentationStyle)
     }
     
     override func didResignActive(with conversation: MSConversation) {
@@ -58,9 +140,12 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
-        // Called before the extension transitions to a new presentation style.
-    
-        // Use this method to prepare for the change in presentation style.
+        
+        guard  let conversation = activeConversation else {
+            fatalError("Fatal error")
+        }
+        
+        presentViewController(for: conversation, with: presentationStyle)
     }
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
@@ -68,5 +153,6 @@ class MessagesViewController: MSMessagesAppViewController {
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
-
+    
+    
 }

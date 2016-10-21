@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5111DC8D3D5C010B23D7CB68 /* Pods_Mess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463873E7EFDC54B408A1AD21 /* Pods_Mess.framework */; };
+		842F8CA61DAFF58A007CFCDE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 842F8CA51DAFF58A007CFCDE /* Podfile */; };
 		845B4F331DAD133400AAF09B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845B4F321DAD133400AAF09B /* Assets.xcassets */; };
 		845B4F3A1DAD133400AAF09B /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 845B4F391DAD133400AAF09B /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		845B4F3F1DAD133400AAF09B /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845B4F3E1DAD133400AAF09B /* Messages.framework */; };
 		845B4F421DAD133400AAF09B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B4F411DAD133400AAF09B /* MessagesViewController.swift */; };
 		845B4F451DAD133400AAF09B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845B4F431DAD133400AAF09B /* MainInterface.storyboard */; };
 		845B4F471DAD133400AAF09B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845B4F461DAD133400AAF09B /* Assets.xcassets */; };
+		845B4F6D1DAD2F0400AAF09B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845B4F461DAD133400AAF09B /* Assets.xcassets */; };
+		846060EE1DAD6295004D956F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846060ED1DAD6295004D956F /* DetailViewController.swift */; };
+		846060F01DAD66AE004D956F /* AddMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846060EF1DAD66AE004D956F /* AddMessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		463873E7EFDC54B408A1AD21 /* Pods_Mess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		842F8CA51DAFF58A007CFCDE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		845B4F2F1DAD133400AAF09B /* Mess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845B4F321DAD133400AAF09B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845B4F341DAD133400AAF09B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,9 +56,21 @@
 		845B4F441DAD133400AAF09B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		845B4F461DAD133400AAF09B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845B4F481DAD133400AAF09B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846060ED1DAD6295004D956F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		846060EF1DAD66AE004D956F /* AddMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMessageViewController.swift; sourceTree = "<group>"; };
+		8B96EFA3DBBF768456215F15 /* Pods-Mess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mess.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mess/Pods-Mess.release.xcconfig"; sourceTree = "<group>"; };
+		D3445B6A7DFDEDCC2C85431C /* Pods-Mess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mess/Pods-Mess.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0F4FCD295CF6B1BE51BC44BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5111DC8D3D5C010B23D7CB68 /* Pods_Mess.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		845B4F361DAD133400AAF09B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,10 +85,12 @@
 		845B4F281DAD133400AAF09B = {
 			isa = PBXGroup;
 			children = (
+				842F8CA51DAFF58A007CFCDE /* Podfile */,
 				845B4F311DAD133400AAF09B /* Mess */,
 				845B4F401DAD133400AAF09B /* MessagesExtension */,
 				845B4F3D1DAD133400AAF09B /* Frameworks */,
 				845B4F301DAD133400AAF09B /* Products */,
+				FA8CFA412C389CDC55C05638 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				845B4F3E1DAD133400AAF09B /* Messages.framework */,
+				463873E7EFDC54B408A1AD21 /* Pods_Mess.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,8 +128,19 @@
 				845B4F431DAD133400AAF09B /* MainInterface.storyboard */,
 				845B4F461DAD133400AAF09B /* Assets.xcassets */,
 				845B4F481DAD133400AAF09B /* Info.plist */,
+				846060ED1DAD6295004D956F /* DetailViewController.swift */,
+				846060EF1DAD66AE004D956F /* AddMessageViewController.swift */,
 			);
 			path = MessagesExtension;
+			sourceTree = "<group>";
+		};
+		FA8CFA412C389CDC55C05638 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3445B6A7DFDEDCC2C85431C /* Pods-Mess.debug.xcconfig */,
+				8B96EFA3DBBF768456215F15 /* Pods-Mess.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,8 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 845B4F4F1DAD133400AAF09B /* Build configuration list for PBXNativeTarget "Mess" */;
 			buildPhases = (
+				A3DF661FF86E6CD3EFA53EAF /* [CP] Check Pods Manifest.lock */,
 				845B4F2D1DAD133400AAF09B /* Resources */,
 				845B4F4E1DAD133400AAF09B /* Embed App Extensions */,
+				0F4FCD295CF6B1BE51BC44BE /* Frameworks */,
+				1C9FFCECDDBA658741F49432 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,10 +195,12 @@
 				TargetAttributes = {
 					845B4F2E1DAD133400AAF09B = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = AB65P3C5XF;
 						ProvisioningStyle = Automatic;
 					};
 					845B4F381DAD133400AAF09B = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = AB65P3C5XF;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -191,6 +229,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842F8CA61DAFF58A007CFCDE /* Podfile in Resources */,
+				845B4F6D1DAD2F0400AAF09B /* Assets.xcassets in Resources */,
 				845B4F331DAD133400AAF09B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,12 +246,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C9FFCECDDBA658741F49432 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mess/Pods-Mess-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3DF661FF86E6CD3EFA53EAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		845B4F351DAD133400AAF09B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846060F01DAD66AE004D956F /* AddMessageViewController.swift in Sources */,
 				845B4F421DAD133400AAF09B /* MessagesViewController.swift in Sources */,
+				846060EE1DAD6295004D956F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +333,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -307,6 +383,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -332,12 +409,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = AB65P3C5XF;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.calc.aakash.Mess.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aatalyk.picword.messafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -345,22 +425,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = AB65P3C5XF;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.calc.aakash.Mess.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aatalyk.picword.messafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		845B4F501DAD133400AAF09B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3445B6A7DFDEDCC2C85431C /* Pods-Mess.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AB65P3C5XF;
 				INFOPLIST_FILE = Mess/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.calc.aakash.Mess;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aatalyk.picword;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -369,11 +457,16 @@
 		};
 		845B4F511DAD133400AAF09B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B96EFA3DBBF768456215F15 /* Pods-Mess.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AB65P3C5XF;
 				INFOPLIST_FILE = Mess/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.calc.aakash.Mess;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aatalyk.picword;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -399,6 +492,7 @@
 				845B4F4D1DAD133400AAF09B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		845B4F4F1DAD133400AAF09B /* Build configuration list for PBXNativeTarget "Mess" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +501,7 @@
 				845B4F511DAD133400AAF09B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
